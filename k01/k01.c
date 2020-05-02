@@ -10,7 +10,7 @@ int N;
 
 int main(void)
 {
-    double val;
+    double val, u, a;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE* fp;
@@ -36,7 +36,7 @@ N = 0;
 
     N = N + 1;
 
-    square_ave = (N-1) * square_ave / N + val*val / N;
+    square_ave = ave_online(val*val, square_ave);
 
     ave = ave_online(val, ave);
 
@@ -45,6 +45,13 @@ N = 0;
 
 printf("ave = %lf\n", ave);
 printf("var = %lf\n", var);
+
+u = N * var / (N-1);
+a = ave;
+
+printf("母集団の平均 = %lf\n", a);
+printf("母集団の分散 = %lf\n", u);
+
 
     if(fclose(fp) == EOF){
         fputs("file close error\n",stderr);
