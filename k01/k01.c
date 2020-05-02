@@ -36,11 +36,12 @@ N = 0;
 
     N = N + 1;
 
+    var = var_online(val, ave, square_ave);
+    
     square_ave = ave_online(val*val, square_ave);
 
     ave = ave_online(val, ave);
 
-    var = var_online(val, ave, square_ave);
 }
 
 printf("ave = %lf\n", ave);
