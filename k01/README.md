@@ -80,14 +80,12 @@ l.79:var を返す
 
 ## 入出力結果
 
-```
 input the filename of sample:../sample/heights_male.csv
 the filename of sample: ../sample/heights_male.csv
-sample mean：
-sample variance：
-population mean (estimated)：
-population variance (estimated)：
-```
+ave = 173.888750
+var = 25.361711
+母集団の平均 = 173.888750
+母集団の分散 = 28.984812
 
 ## 修正履歴
 
