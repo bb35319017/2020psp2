@@ -12,6 +12,12 @@ int main(void)
     char buf[256];
     FILE* fp;
     double L1=1,L2=1;
+    double thetaA, thetaB;
+    double max_val, min_val;
+    double muA=170.8, muB=169.7;
+    double sigmaA=5.43*5.43, sigmaB=5.5*5.5;
+
+
 
     printf("input the filename of sample:");
     fgets(fname,sizeof(fname),stdin);
@@ -19,22 +25,29 @@ int main(void)
     printf("the filename of sample: %s\n",fname);
 
     fp = fopen(fname,"r");
-    if(fp==NULL){
+    if(fp==NULL)
+    {
         fputs("File open error\n",stderr);
         exit(EXIT_FAILURE);
     }
 
-    while(fgets(buf,sizeof(buf),fp) != NULL){
+    while(fgets(buf,sizeof(buf),fp) != NULL)
+    {
         sscanf(buf,"%lf",&val);
 
+        thetaA = (val-muA)/sigmaA;
+        thetaB = (val-muB)/sigmaB;
 
-    
-
-
+        L1 = L1 * p_stdnorm(thetaA);
+        L2 = L2 * p_stdnorm(thetaB);
 
     }
 
-    if(fclose(fp) == EOF){
+    max_val = L1;
+    min_val = L2;
+
+    if(fclose(fp) == EOF)
+    {
         fputs("file close error\n",stderr);
         exit(EXIT_FAILURE);
     }
@@ -49,6 +62,7 @@ int main(void)
 
 double p_stdnorm(double z)
 {
+    
     return 1/sqrt(2*M_PI) * exp(-z*z/2);
 }
 
