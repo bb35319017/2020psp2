@@ -59,8 +59,11 @@ l.63 p_stdnormを定義
 ## 入出力結果
 
 ```
-L_A: 0.000546
-L_B: 0.000532
+C:\Users\sakura\source\pg2\2020psp2\k02>k02
+input the filename of sample:../sample/heights_male.csv
+the filename of sample: ../sample/heights_male.csv
+L_A: 0.000006
+L_B: 0.000002
 ```
 
 ## 修正履歴
@@ -70,3 +73,10 @@ L_B: 0.000532
 - l.38, 39はθを求めているのではなく, やっていることは標準化なので変数名を変えましょう. (y_aとかnormalizedAとか...)
 - max_val, min_valが何を意図しているのか分かりませんでした.  max_val, min_valは消して, `printf`のところで直接, `L1`, `L2`を引数として与えて良いと思います. 
 
+出力結果を記入した
+
+l.18 σの2乗を外した
+
+l.38-l.39 関数名を変更
+
+l.54-55 Lを直接因数とした

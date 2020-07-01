@@ -12,10 +12,10 @@ int main(void)
     char buf[256];
     FILE* fp;
     double L1=1,L2=1;
-    double thetaA, thetaB;
+    double yA, yB;
     double max_val, min_val;
     double muA=170.8, muB=169.7;
-    double sigmaA=5.43*5.43, sigmaB=5.5*5.5;
+    double sigmaA=5.43, sigmaB=5.5;
 
 
 
@@ -35,16 +35,15 @@ int main(void)
     {
         sscanf(buf,"%lf",&val);
 
-        thetaA = (val-muA)/sigmaA;
-        thetaB = (val-muB)/sigmaB;
+        yA = (val-muA)/sigmaA;
+        yB = (val-muB)/sigmaB;
 
-        L1 = L1 * p_stdnorm(thetaA);
-        L2 = L2 * p_stdnorm(thetaB);
+        L1 = L1 * p_stdnorm(yA);
+        L2 = L2 * p_stdnorm(yB);
 
     }
 
-    max_val = L1;
-    min_val = L2;
+  
 
     if(fclose(fp) == EOF)
     {
@@ -52,8 +51,8 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
-    printf("L_A: %f\n",max_val);
-    printf("L_B: %f\n",min_val);
+    printf("L_A: %f\n",L1);
+    printf("L_B: %f\n",L2);
 
     return 0;
 
