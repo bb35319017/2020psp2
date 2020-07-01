@@ -59,8 +59,8 @@ l.63 p_stdnormを定義
 ## 入出力結果
 
 ```
-Likelihood for A：
-Likelihood for B：
+L_A: 0.000546
+L_B: 0.000532
 ```
 
 ## 修正履歴

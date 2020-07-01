@@ -14,7 +14,7 @@ extern double r_stdnorm(void);
 
 int main(int argc, char* argv[])
 {
-    int num_dummy;
+    int num_dummy ;
     double mu;
     double sigma;
     int i;
@@ -31,9 +31,10 @@ int main(int argc, char* argv[])
     printf("============================================\n");
 
     srand(RAND_SEED);
-    for(  ){
+    for(i=1; i<=5; i++)
+    {
         /* r_stdnormを使って，1人のデータを捏造 */
-        dummy =   ;
+        dummy = sigma * r_stdnorm() + mu  ;
         printf("%5.2lf\n",dummy);
     }
 
