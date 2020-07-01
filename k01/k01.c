@@ -10,7 +10,7 @@ int N;
 
 int main(void)
 {
-    double val, u, a;
+    double val, est_var, est_ave;
     char fname[FILENAME_MAX];
     char buf[256];
     FILE *fp;
@@ -48,11 +48,11 @@ int main(void)
     printf("ave = %lf\n", ave);
     printf("var = %lf\n", var);
 
-    u = N * var / (N - 1);
-    a = ave;
+    est_var = N * var / (N - 1);
+    est_ave = ave;
 
-    printf("母集団の平均 = %lf\n", a);
-    printf("母集団の分散 = %lf\n", u);
+    printf("母集団の平均 = %lf\n", est_ave);
+    printf("母集団の分散 = %lf\n", est_var);
 
     if (fclose(fp) == EOF)
     {
