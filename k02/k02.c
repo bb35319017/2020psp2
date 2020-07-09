@@ -13,7 +13,6 @@ int main(void)
     FILE* fp;
     double L1=1,L2=1;
     double yA, yB;
-    double max_val, min_val;
     double muA=170.8, muB=169.7;
     double sigmaA=5.43, sigmaB=5.5;
 
