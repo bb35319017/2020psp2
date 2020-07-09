@@ -20,13 +20,13 @@ int main(int argc, char* argv[])
     int i;
     double dummy;
 
-if(argc<4)
-{
-    return 1;
-}
-sscanf(argv[1], "%lf", &mu);
-sscanf(argv[2], "%lf", &sigma);
-sscanf(argv[3], "%d", &num_dummy);
+    if(argc<4)
+    {
+        return 1;
+    }
+    sscanf(argv[1], "%lf", &mu);
+    sscanf(argv[2], "%lf", &sigma);
+    sscanf(argv[3], "%d", &num_dummy);
 
     printf("============================================\n");
     printf("template mean: %4.1lf\n",mu);
