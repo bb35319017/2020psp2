@@ -60,7 +60,7 @@ int main(void)
             }
             else
             {
-                printf("gender : famel\n");
+                printf("gender : female\n");
             }
             printf("height : %.1lf\n", data[i].height);
             return 0;
